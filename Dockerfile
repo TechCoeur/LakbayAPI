@@ -10,8 +10,8 @@ RUN pip install requests fastapi uvicorn[standard]
 # copy the content of the local src directory to the working directory
 COPY . .
 
-EXPOSE 8000
+EXPOSE 80
 
 # command to run on container start
 # uvicorn main:app --reload
-CMD [ "uvicorn", "main:app", "--reload"]
+CMD [ "uvicorn", "main:app", "--reload", "--port", "80"]
